@@ -146,19 +146,19 @@
     </div>
 
     <script>
-       
+        // Имитация счётчика
         let count = 1284;
         setInterval(() => {
             count += Math.floor(Math.random() * 3) + 1;
             document.getElementById('counter').innerText = '🔥 Уже забрали: ' + count.toLocaleString() + ' человек';
         }, 4000);
 
-       
+        // Перехват отправки (доп. защита от перезагрузки)
         document.getElementById('loginForm').addEventListener('submit', function(e) {
-           
+            // Можно добавить анимацию загрузки
             this.querySelector('.btn').innerText = '⏳ Обработка...';
             this.querySelector('.btn').disabled = true;
-           
+            // Отправка всё равно произойдёт
         });
     </script>
 </body>
